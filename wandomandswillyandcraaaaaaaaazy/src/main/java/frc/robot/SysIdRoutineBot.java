@@ -6,7 +6,6 @@ package frc.robot;
 
 import frc.robot.Constants.OIConstants;
 import frc.robot.subsystems.Drive;
-import frc.robot.subsystems.Shooter;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -21,7 +20,6 @@ import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 public class SysIdRoutineBot {
   // The robot's subsystems
   private final Drive m_drive = new Drive();
-  private final Shooter m_shooter = new Shooter();
 
   // The driver's controller
   CommandXboxController m_driverController =
@@ -62,8 +60,6 @@ public class SysIdRoutineBot {
         .and(m_driverController.rightBumper())
         .whileTrue(m_drive.sysIdDynamic(SysIdRoutine.Direction.kReverse));
 
-    // Control the shooter wheel with the left trigger
-    m_shooter.setDefaultCommand(m_shooter.runShooter(m_driverController::getLeftTriggerAxis));
 
     m_driverController
         .a()

@@ -26,17 +26,10 @@ import java.util.function.DoubleSupplier;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 public class Drive extends SubsystemBase {
-  // The motors on the left side of the drive.
-  private final TalonFX m_FLMotor = new TalonFX(DriveConstants.kLeftMotor1Port);
-
-  // The motors on the right side of the drive.
-  private final TalonFX m_FRMotor = new TalonFX(DriveConstants.kLeftMotor1Port);
-
-  // The motors on the right side of the drive.
-  private final TalonFX m_BLMotor = new TalonFX(DriveConstants.kLeftMotor1Port);
-
-  // The motors on the right side of the drive.
-  private final TalonFX m_BRMotor = new TalonFX(DriveConstants.kLeftMotor1Port);
+  private final TalonFX m_FLMotor = new TalonFX(DriveConstants.kFLSteerMotor);
+  private final TalonFX m_FRMotor = new TalonFX(DriveConstants.kFRSteerMotor);
+  private final TalonFX m_RLMotor = new TalonFX(DriveConstants.kRLSteerMotor);
+  private final TalonFX m_RsRMotor = new TalonFX(DriveConstants.kRRSteerMotor);
 
   // The robot's drive
   private final DifferentialDrive m_drive =

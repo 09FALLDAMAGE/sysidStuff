@@ -16,60 +16,21 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
   public static final class DriveConstants {
-    public static final int kFLMotor1Port = 0;
-    public static final int kFRMotor2Port = 1;
-    public static final int kBLMotor1Port = 2;
-    public static final int kBRMotor2Port = 3;
+    public static final int kFLSteerMotor = 0;
+    public static final int kFRSteerMotor = 1;
+    public static final int kRLSteerMotor = 2;
+    public static final int kRRSteerMotor = 3;
 
-    public static final int[] kLeftEncoderPorts = {0, 1};
-    public static final int[] kRightEncoderPorts = {2, 3};
-    public static final boolean kLeftEncoderReversed = false;
-    public static final boolean kRightEncoderReversed = true;
+    public static final int kFLEncoder = 10;
+    public static final int kFREncoder = 11;
+    public static final int kRLEncoder = 12;
+    public static final int kRREncoder = 13;
 
-    public static final int kEncoderCPR = 1024;
-    public static final double kWheelDiameterMeters = Units.inchesToMeters(6);
-    public static final double kEncoderDistancePerPulse =
-        // Assumes the encoders are directly mounted on the wheel shafts
-        (kWheelDiameterMeters * Math.PI) / (double) kEncoderCPR;
-  }
 
-  public static final class ShooterConstants {
-    public static final int[] kEncoderPorts = {4, 5};
-    public static final boolean kEncoderReversed = false;
-    public static final int kEncoderCPR = 1024;
-    public static final double kEncoderDistancePerPulse =
-        // Distance units will be rotations
-        1.0 / (double) kEncoderCPR;
 
-    public static final int kShooterMotorPort = 4;
-    public static final int kFeederMotorPort = 5;
 
-    public static final double kShooterFreeRPS = 5300;
-    public static final double kShooterTargetRPS = 4000;
-    public static final double kShooterToleranceRPS = 50;
-
-    // These are not real PID gains, and will have to be tuned for your specific robot.
-    public static final double kP = 1;
-
-    // On a real robot the feedforward constants should be empirically determined; these are
-    // reasonable guesses.
-    public static final double kSVolts = 0.05;
-    public static final double kVVoltSecondsPerRotation =
-        // Should have value 12V at free speed...
-        12.0 / kShooterFreeRPS;
-    public static final double kAVoltSecondsSquaredPerRotation = 0;
-
-    public static final double kFeederSpeed = 0.5;
-  }
-
-  public static final class IntakeConstants {
-    public static final int kMotorPort = 6;
-    public static final int[] kSolenoidPorts = {2, 3};
-  }
-
-  public static final class StorageConstants {
-    public static final int kMotorPort = 7;
-    public static final int kBallSensorPort = 6;
+    public static final double kWheelDiameterMeters = Units.inchesToMeters(2);
+    public static final double kEncoderDistancePerPulse = 1;
   }
 
   public static final class AutoConstants {
